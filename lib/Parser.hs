@@ -31,3 +31,4 @@ parseBF (x : xs) d = case x of
     prepend (Loop contents) <$> parseBF xs' d
   ']' -> if d == 0 then Nothing else Just ([], xs)
   _ -> parseBF xs d
+

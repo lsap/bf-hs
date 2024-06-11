@@ -38,3 +38,4 @@ mapBFToAction = \case
   Write -> stdin
   Read -> stdout
   Loop chunk' -> whileM isTrue (act chunk')
+

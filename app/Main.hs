@@ -1,6 +1,6 @@
 module Main where
 
-import BF
+import BF (runBF)
 
 main :: IO ()
 main = do
@@ -8,3 +8,4 @@ main = do
   case runBF program [2, 4] of
     Just output -> print output
     Nothing -> putStrLn "Error"
+

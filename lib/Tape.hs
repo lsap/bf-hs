@@ -3,9 +3,11 @@
 module Tape where
 
 import Control.Monad.Reader
+import Control.Monad.Reader (ReaderT)
 import Control.Monad.ST
 import Data.Array.ST (MArray (getBounds), STArray, modifyArray, newArray, readArray, writeArray)
 import Data.STRef
+import Data.STRef (readSTRef, writeSTRef)
 import DiffList
 
 type Runtime s = (STRef s [Int], STRef s (DiffList Int), TapeArray s, STRef s Int)
@@ -80,3 +82,4 @@ getRuntime input = do
   arr <- newArray (0, 10) 0 :: ST s (TapeArray s)
   output <- newSTRef mempty :: ST s (STRef s (DiffList Int))
   pure (input', output, arr, idx)
+

@@ -16,3 +16,4 @@ toList (DiffList f) = f []
 
 fromList :: [a] -> DiffList a
 fromList xs = DiffList (xs ++)
+
